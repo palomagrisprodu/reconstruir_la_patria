@@ -7,7 +7,7 @@
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name ="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta charset="utf-8"/>
 
@@ -73,6 +73,38 @@
                 text-align: center;
             }
             /* END - Custom Runner Styles */
+			
+			html, body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background: #000;
+			}
+
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			div.gm4html5_div_class {
+				width: 100vw;
+				height: 100dvh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			canvas {
+				display: block;
+				width: 100%;
+				height: 100%;
+				max-width: 100vw;
+				max-height: 100dvh;
+				object-fit: contain;
+			}
             
         </style>
 
