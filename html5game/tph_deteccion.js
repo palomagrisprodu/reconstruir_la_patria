@@ -42,6 +42,47 @@ function es_pantalla_completa() {
 function pantalla_completa_web(_activar) {
     try {
         var _el = document.documentElement;
+
+        if (_activar) {
+            var _pedir = _el.requestFullscreen ||
+                         _el.webkitRequestFullscreen;
+
+            if (_pedir) {
+                var _p = _pedir.call(_el);
+
+                if (_p && _p.catch) {
+                    _p.catch(function () {});
+                }
+
+                return 1;
+            }
+
+            return 0;
+
+        } else {
+            var _salir = document.exitFullscreen ||
+                         document.webkitExitFullscreen;
+
+            if (_salir) {
+                var _q = _salir.call(document);
+
+                if (_q && _q.catch) {
+                    _q.catch(function () {});
+                }
+
+                return 1;
+            }
+
+            return 0;
+        }
+
+    } catch (e) {
+        return 0;
+    }
+}
+/*function pantalla_completa_web(_activar) {
+    try {
+        var _el = document.documentElement;
         if (_activar) {
             var _pedir = _el.requestFullscreen || _el.webkitRequestFullscreen;
             if (_pedir) {
